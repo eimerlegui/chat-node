@@ -6,7 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "node dist/index.js",
+    "dev:f": "cd front && pnpm run dev",
     "dev": "nodemon server/index.ts"
+    
   },
   "keywords": [],
   "author": "",
