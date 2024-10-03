@@ -36,8 +36,9 @@ function App() {
 
 	const handleOnSubmit = (e: any) => {
 		e.preventDefault();
-		setMessage("");
+		setMessages((prev) => [...prev, {data: message, id: 'null'}]);
 		socket.emit("message", message);
+		setMessage("");
 	};
 
 	const sendTyping = () => {

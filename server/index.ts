@@ -16,12 +16,12 @@ const app: Application = express();
 const server = http.createServer(app);
 const io = new IOServer(server);
 
-connectionDB.authenticate()
-	.catch(err => console.log(err));
+// connectionDB.authenticate()
+// 	.catch(err => console.log(err));
 
-connectionDB.sync()
-	.then(() => console.log("DATA BASE RUNNING"))
-	.catch((err) => console.error(err));
+// connectionDB.sync()
+// 	.then(() => console.log("DATA BASE RUNNING"))
+// 	.catch((err) => console.error(err));
 
 connectionSocket(io);
 

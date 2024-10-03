@@ -7,10 +7,10 @@ export function connectionSocket(io: IOServer) {
 	io.on("connection", (socket: Socket) => {
 		socket.on("message", async (data: any) => {
 			socket.broadcast.emit("message", { id: socket.id, data })
-			const dataDB = await getTest();
+			// const dataDB = await getTest();
 			console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@")
-			console.log(dataDB)
-			console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@")
+			// console.log(dataDB)
+			// console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@")
 		})
 		socket.on("typing", () => {
 			socket.broadcast.emit("typing", { id: socket.id })
