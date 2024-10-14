@@ -62,7 +62,7 @@ function App() {
 			<br />
 			<hr />
 			{messages.map((msg, i) =>
-				<p className='border border-red-500' key={i}> - {msg.data}</p>
+				<p className='border mt-3' style={{borderColor: msg.id === 'null' ? 'blue' : 'red'}} key={i}> - {msg.data}</p>
 			)}
 			<form onSubmit={handleOnSubmit}>
 				<input type="text" value={message} onChange={e => setMessage(e.target.value)} onInput={sendTyping} />
