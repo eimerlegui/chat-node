@@ -10,6 +10,8 @@ const ENV: IEnv = {
 	CLIENT_ID: process.env.CLIENT_ID || "",
 	CLIENT_SECRET: process.env.CLIENT_SECRET || "",
 	URL_BASE: process.env.URL_BASE || "http://localhost:3000",
+	SESSION_SECRET: process.env.SESSION_SECRET || "",
+	URL_FRONT: process.env.URL_FRONT || "http://localhost:5173",
 	DB: {
 		DIALECT: "mysql",
 		HOST: process.env.DB_HOST || "localhost",

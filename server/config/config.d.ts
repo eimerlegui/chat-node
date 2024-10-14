@@ -16,4 +16,6 @@ export interface IEnv {
 	CLIENT_ID: string;
 	CLIENT_SECRET: string;
 	URL_BASE: string;
+	SESSION_SECRET: string;
+	URL_FRONT: string;
 }

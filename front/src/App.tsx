@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import './App.css';
-import axios from 'axios';
+import { ENV } from './config/dotenv';
+// const IOUrl = import.meta.env.VITE_URL_BACK;
+// import axios from 'axios';
 
-const socket = io("/");
+const socket = io(ENV.URL_BACK);
 
 function App() {
 
@@ -45,14 +47,14 @@ function App() {
 		socket.emit("typing");
 	};
 
-	const handleLogin = () => {
-		// axios.get("http://localhost:3000/auth/google")
-		window.open("http://localhost:3000/auth/google/callback", "_self")
-	}
+	// const handleLogin = () => {
+	// 	// axios.get("http://localhost:3000/auth/google")
+	// 	window.open("http://localhost:3000/auth/google/callback", "_self")
+	// }
 
-	const handleLogout = () => {
-		axios.get("http://localhost:3000/auth/logout")
-	}
+	// const handleLogout = () => {
+	// 	axios.get("http://localhost:3000/auth/logout")
+	// }
 
 	return (
 		<>
@@ -68,8 +70,8 @@ function App() {
 			</form>
 			<br /><br /><br />
 			<hr />
-			<button onClick={handleLogin}>Login Google</button>
-			<button onClick={handleLogout}>Logout</button>
+			{/* <button onClick={handleLogin}>Login Google</button> */}
+			{/* <button onClick={handleLogout}>Logout</button> */}
 
 		</>
 	)

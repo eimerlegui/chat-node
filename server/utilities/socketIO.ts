@@ -8,7 +8,7 @@ export function connectionSocket(io: IOServer) {
 		socket.on("message", async (data: any) => {
 			socket.broadcast.emit("message", { id: socket.id, data })
 			// const dataDB = await getTest();
-			console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@")
+			// console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@")
 			// console.log(dataDB)
 			// console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@")
 		})

@@ -4,11 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
     "start": "node dist/index.js",
+    "build": "cd front && pnpm install && pnpm run build",
     "dev:f": "cd front && pnpm run dev",
     "dev": "nodemon server/index.ts"
-    
   },
   "keywords": [],
   "author": "",
