@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import './App.css';
 import { ENV } from './config/dotenv';
+import LoginWithGoogle from './test/auth/Login';
 // const IOUrl = import.meta.env.VITE_URL_BACK;
 // import axios from 'axios';
 
@@ -58,6 +59,7 @@ function App() {
 
 	return (
 		<>
+			<LoginWithGoogle />
 			{ typing?.typing && <p>Eimer está escribiendo</p>}
 			<br />
 			<hr />
