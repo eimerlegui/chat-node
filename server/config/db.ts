@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import { ENV } from "./dotenv";
 
-export const connectionDB = new Sequelize({
+export const sequelize = new Sequelize({
 	dialect: ENV.DB.DIALECT,
 	host: ENV.DB.HOST,
 	port: ENV.DB.PORT,

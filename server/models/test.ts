@@ -1,5 +1,5 @@
 import { DataTypes, Model, Optional } from 'sequelize';
-import { connectionDB } from '../config/db';
+import { sequelize } from '../config/db';
 
 interface TestAttributes {
 	id?: number;
@@ -38,7 +38,7 @@ Test.init({
 		defaultValue: DataTypes.NOW
 	}
 }, {
-	sequelize: connectionDB,
+	sequelize: sequelize,
 	modelName: 'Test',
 	timestamps: true,
 });
