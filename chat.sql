@@ -1,7 +1,6 @@
 -- Crear las tablas primero
 CREATE TABLE `users` (
   `uid` varchar(255) PRIMARY KEY,
-  `name` varchar(50),
   `username` varchar(50) UNIQUE NOT NULL,
   `providerId` varchar(30),
   `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
