@@ -1,8 +1,8 @@
-import { Test } from "../models/test";
+import { Message } from "../models"
 
 
 export const getTest = async () => {
-	return await Test.findAll({
+	return await Message.findAll({
 		raw: true
 	})
 }

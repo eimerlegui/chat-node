@@ -1,14 +1,11 @@
 
 import dotenv from 'dotenv';
-import { IEnv } from './config';
 
 dotenv.config();
 
 const ENV: IEnv = {
 	ENV: process.env.ENV || "dev",
 	PORT: parseInt(process.env.PORT || "3000", 10),
-	CLIENT_ID: process.env.CLIENT_ID || "",
-	CLIENT_SECRET: process.env.CLIENT_SECRET || "",
 	URL_BASE: process.env.URL_BASE || "http://localhost:3000",
 	SESSION_SECRET: process.env.SESSION_SECRET || "",
 	URL_FRONT: process.env.URL_FRONT || "http://localhost:5173",

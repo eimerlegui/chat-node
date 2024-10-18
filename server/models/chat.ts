@@ -1,16 +1,6 @@
 import { DataTypes, Model, Optional } from 'sequelize';
 import { sequelize } from '../config/db';
 
-interface ChatAttributes {
-	id?: number;
-	type: number;
-	name?: string;
-	createdAt?: Date;
-	deletedAt?: Date | null;
-}
-
-interface ChatCreationAttributes extends Optional<ChatAttributes, 'id' | 'createdAt' | 'deletedAt'> { }
-
 class Chat extends Model<ChatAttributes, ChatCreationAttributes> implements ChatAttributes {
 	public id!: number;
 	public type!: number;

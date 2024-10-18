@@ -3,16 +3,6 @@ import { sequelize } from '../config/db';
 import { User } from './user';
 import { Chat } from './chat';
 
-interface MessageAttributes {
-	id?: number;
-	content: string;
-	sentAt?: Date;
-	userId: string;
-	chatId: number;
-}
-
-interface MessageCreationAttributes extends Optional<MessageAttributes, 'id' | 'sentAt'> { }
-
 class Message extends Model<MessageAttributes, MessageCreationAttributes> implements MessageAttributes {
 	public id!: number;
 	public content!: string;

@@ -1,5 +1,5 @@
 
-export interface IDB {
+interface IDB {
 	DIALECT: 'mysql' | 'sqlite' | 'postgres' | 'mssql';
 	HOST: string;
 	PORT: number;
@@ -8,13 +8,11 @@ export interface IDB {
 	DATABASE: string;
 }
 
-export interface IEnv {
+interface IEnv {
 	ENV: string;
 	PORT: number;
 	DB: IDB;
 
-	CLIENT_ID: string;
-	CLIENT_SECRET: string;
 	URL_BASE: string;
 	SESSION_SECRET: string;
 	URL_FRONT: string;
