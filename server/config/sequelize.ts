@@ -9,3 +9,13 @@ export const sequelize = new Sequelize({
 	password: ENV.DB.PASSWORD,
 	database: ENV.DB.DATABASE
 })
+
+export function configSequelize() {
+	sequelize.authenticate()
+	.then(() => console.log("DATA BASE AUTHENTICATE"))
+	.catch(err => console.log(err));
+
+	sequelize.sync()
+	.then(() => console.log("DATA BASE SYNC"))
+	.catch((err) => console.error(err));
+}

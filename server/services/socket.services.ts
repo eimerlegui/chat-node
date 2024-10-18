@@ -1,5 +1,5 @@
-import { Message } from "../models"
 
+import { Message } from "../models"
 
 export const getTest = async () => {
 	return await Message.findAll({

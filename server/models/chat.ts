@@ -1,5 +1,6 @@
-import { DataTypes, Model, Optional } from 'sequelize';
-import { sequelize } from '../config/db';
+
+import { DataTypes, Model } from 'sequelize';
+import { sequelize } from '../config';
 
 class Chat extends Model<ChatAttributes, ChatCreationAttributes> implements ChatAttributes {
 	public id!: number;

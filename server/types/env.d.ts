@@ -8,7 +8,7 @@ interface IDB {
 	DATABASE: string;
 }
 
-interface IEnv {
+export interface IEnv {
 	ENV: string;
 	PORT: number;
 	DB: IDB;

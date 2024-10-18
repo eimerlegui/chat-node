@@ -1,4 +1,5 @@
 
+import { IEnv } from '../types/env';
 import dotenv from 'dotenv';
 
 dotenv.config();
