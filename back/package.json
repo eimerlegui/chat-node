@@ -4,22 +4,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd front && pnpm install && pnpm run build",
-    "dev:f": "cd front && pnpm run dev",
-    "dev": "nodemon server/index.ts"
+    "dev": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "axios": "^1.7.5",
     "cookie-session": "^2.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
-    "firebase": "^10.14.1",
     "morgan": "^1.10.0",
     "mysql2": "^3.11.0",
     "sequelize": "^6.37.3",

@@ -1,7 +1,8 @@
+import cors from "cors";
 import express, { Application } from "express";
 import session from "express-session";
-import cors from "cors";
 import { ENV } from "./dotenv";
+import { mainRouter } from "../routes";
 
 export function configApp(app: Application) {
 
@@ -19,4 +20,6 @@ export function configApp(app: Application) {
 		methods: ["GET", "POST", "PUT", "DELETE"],
 		credentials: true
 	}))
+
+	app.use("/api",mainRouter)
 }
