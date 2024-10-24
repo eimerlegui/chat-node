@@ -8,9 +8,9 @@ const app: Application = express();
 const server = http.createServer(app);
 const serverSocket = configSocket(server);
 
-configSequelize();
+// configSequelize();
 connectionSocket(serverSocket);
-configApp(app)
+// configApp(app)
 
 server.listen(ENV.PORT);
 console.log("DATA SERVER RUNNING", ENV.PORT);
