@@ -1,14 +1,22 @@
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
-import './App.css';
 import { ENV } from './config/dotenv';
 import LoginWithGoogle from './test/auth/Login';
+import { RouterProvider } from 'react-router-dom';
+import routes from './shared/routes';
+import './App.css';
 // const IOUrl = import.meta.env.VITE_URL_BACK;
 // import axios from 'axios';
 
 const socket = io(ENV.URL_BACK);
 
 function App() {
+	return (
+		<RouterProvider router={ routes } />
+	);
+}
+
+function App2() {
 
 	const [typing, setTyping] = useState<{id: string, typing: boolean}>();
 	const [message, setMessage] = useState<string>("");
@@ -48,15 +56,6 @@ function App() {
 		socket.emit("typing");
 	};
 
-	// const handleLogin = () => {
-	// 	// axios.get("http://localhost:3000/auth/google")
-	// 	window.open("http://localhost:3000/auth/google/callback", "_self")
-	// }
-
-	// const handleLogout = () => {
-	// 	axios.get("http://localhost:3000/auth/logout")
-	// }
-
 	return (
 		<>
 			<LoginWithGoogle />
@@ -70,11 +69,6 @@ function App() {
 				<input type="text" value={message} onChange={e => setMessage(e.target.value)} onInput={sendTyping} />
 				<button>Send</button>
 			</form>
-			<br /><br /><br />
-			<hr />
-			{/* <button onClick={handleLogin}>Login Google</button> */}
-			{/* <button onClick={handleLogout}>Logout</button> */}
-
 		</>
 	)
 }
