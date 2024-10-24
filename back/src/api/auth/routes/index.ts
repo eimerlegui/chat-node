@@ -1,6 +1,8 @@
 import { Router } from "express";
-import { login } from "../controllers";
+import { login, register } from "../controllers";
+import { loginValidator, validate } from "../validators";
 
 export const routerAuth = Router();
 
-routerAuth.get("/eimer", login)
+routerAuth.get("/auth/login", validate(loginValidator), login);
+routerAuth.post("/auth/register", register);
