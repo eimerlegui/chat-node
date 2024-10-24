@@ -1,4 +1,4 @@
-interface ChatAttributes {
+export interface ChatAttributes {
 	id?: number;
 	type: number;
 	name?: string;
@@ -6,9 +6,9 @@ interface ChatAttributes {
 	deletedAt?: Date | null;
 }
 
-interface ChatCreationAttributes extends Optional<ChatAttributes, 'id' | 'createdAt' | 'deletedAt'> { }
+export interface ChatCreationAttributes extends Optional<ChatAttributes, 'id' | 'createdAt' | 'deletedAt'> { }
 
-interface ContactAttributes {
+export interface ContactAttributes {
 	id?: number;
 	userId: string;
 	contactId: string;
@@ -18,9 +18,9 @@ interface ContactAttributes {
 	updatedAt?: Date;
 }
 
-interface ContactCreationAttributes extends Optional<ContactAttributes, 'id' | 'createdAt' | 'updatedAt'> { }
+export interface ContactCreationAttributes extends Optional<ContactAttributes, 'id' | 'createdAt' | 'updatedAt'> { }
 
-interface MessageAttributes {
+export interface MessageAttributes {
 	id?: number;
 	content: string;
 	sentAt?: Date;
@@ -28,9 +28,9 @@ interface MessageAttributes {
 	chatId: number;
 }
 
-interface MessageCreationAttributes extends Optional<MessageAttributes, 'id' | 'sentAt'> { }
+export interface MessageCreationAttributes extends Optional<MessageAttributes, 'id' | 'sentAt'> { }
 
-interface UserAttributes {
+export interface UserAttributes {
 	uid: string;
 	username: string;
 	providerId?: string;
@@ -38,4 +38,4 @@ interface UserAttributes {
 	updatedAt?: Date;
 }
 
-interface UserCreationAttributes extends Optional<UserAttributes, 'uid' | 'createdAt' | 'updatedAt'> { }
+export interface UserCreationAttributes extends Optional<UserAttributes, 'uid' | 'createdAt' | 'updatedAt'> { }

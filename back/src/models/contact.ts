@@ -1,6 +1,7 @@
 
+import { ContactAttributes, ContactCreationAttributes } from '../types/models';
 import { DataTypes, Model } from 'sequelize';
-import { sequelize } from '../config';
+import { sequelize } from '../config/sequelize';
 import { Chat } from './chat';
 import { User } from './user';
 
@@ -63,7 +64,7 @@ Contact.init({
 	},
 }, {
 	sequelize,
-	modelName: 'Contact',
+	modelName: 'contact',
 	timestamps: true,
 });
 

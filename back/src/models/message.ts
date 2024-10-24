@@ -1,6 +1,7 @@
 
+import { MessageAttributes, MessageCreationAttributes } from '../types/models';
 import { DataTypes, Model } from 'sequelize';
-import { sequelize } from '../config';
+import { sequelize } from '../config/sequelize';
 import { Chat } from './chat';
 import { User } from './user';
 
@@ -18,14 +19,6 @@ Message.init({
 		primaryKey: true,
 		autoIncrement: true
 	},
-	content: {
-		type: DataTypes.TEXT,
-		allowNull: false
-	},
-	sentAt: {
-		type: DataTypes.DATE,
-		defaultValue: DataTypes.NOW
-	},
 	userId: {
 		type: DataTypes.STRING(255),
 		allowNull: false,
@@ -41,10 +34,18 @@ Message.init({
 			model: Chat,
 			key: 'id'
 		}
+	},
+	content: {
+		type: DataTypes.TEXT,
+		allowNull: false
+	},
+	sentAt: {
+		type: DataTypes.DATE,
+		defaultValue: DataTypes.NOW
 	}
 }, {
-	sequelize,
-	modelName: 'Message',
+	sequelize: sequelize,
+	modelName: 'message',
 	timestamps: false,
 });
 

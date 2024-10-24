@@ -1,6 +1,7 @@
 
+import { ChatAttributes, ChatCreationAttributes } from '../types/models';
 import { DataTypes, Model } from 'sequelize';
-import { sequelize } from '../config';
+import { sequelize } from '../config/sequelize';
 
 class Chat extends Model<ChatAttributes, ChatCreationAttributes> implements ChatAttributes {
 	public id!: number;
@@ -32,8 +33,8 @@ Chat.init({
 		allowNull: true
 	}
 }, {
-	sequelize,
-	modelName: 'Chat',
+	sequelize: sequelize,
+	modelName: 'chat',
 	timestamps: false,
 	paranoid: true, // habilita soft delete usando deletedAt
 });

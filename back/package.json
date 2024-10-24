@@ -20,7 +20,8 @@
     "mysql2": "^3.11.0",
     "sequelize": "^6.37.3",
     "socket.io": "^4.7.5",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/cookie-session": "^2.0.49",
