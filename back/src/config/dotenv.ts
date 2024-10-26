@@ -1,8 +1,6 @@
 
 import { IEnv } from '../types/env';
-import dotenv from 'dotenv';
-
-dotenv.config();
+process.loadEnvFile()
 
 const ENV: IEnv = {
 	ENV: process.env.ENV || "dev",
