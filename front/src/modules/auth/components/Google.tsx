@@ -41,6 +41,7 @@ export const Google: React.FC = () => {
 				{ uid: userFirebase.uid, username: userName, providerId: userFirebase.providerData[0].providerId }
 			)
 			console.log(response);
+			if (response?.username) navigate("/general");
 		} catch (error) {
 			console.error("Error en el registro:", error);
 		}
