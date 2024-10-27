@@ -35,6 +35,7 @@ a:hover {
 
 .pru { border: 4px solid red}
 .pru2 { border: 4px solid green}
+.center { display: flex; align-items: center; justify-content: center; }
 .vstack {
   display: flex;
   flex-direction: column;
