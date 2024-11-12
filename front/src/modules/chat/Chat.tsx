@@ -49,7 +49,7 @@ export const Chat: React.FC<ChatProps> = () => {
 
 	return (
 		<>
-			<div className="vstack overflow-auto h-full">
+			<div className="vstack h-full">
 				<div className="flex items-center w-full h-16 shadow-lg px-10 sticky top-0 flex-shrink-0 bg-[#242424]">
 					<p className="me-1">Person</p>
 					{ typing?.typing && <p> está escribiendo</p>}

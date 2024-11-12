@@ -13,7 +13,7 @@ export const Login: React.FC<LoginProps> = () => {
 	}
 
 	return <>
-		<div className="h-full w-[430px] mx-auto shadow-md border border-gray-700 overflow-hidden center flex-col gap-y-4">
+		<div className="w-full h-full max-w-[430px] mx-auto shadow-md border border-gray-700 overflow-hidden center flex-col gap-y-4">
 			<h1>Login</h1>
 			<Google />
 			<button onClick={handleRedirectChatGeneral}>Chat General</button>
