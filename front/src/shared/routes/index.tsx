@@ -6,6 +6,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Login } from "../../modules/auth/Login";
 import { Default } from "../layouts/Default";
 import { Chat } from "../../modules/chat/Chat";
+import { Home } from "@/modules/home/Home";
 
 export default createBrowserRouter([
 	{
@@ -18,7 +19,7 @@ export default createBrowserRouter([
 		children: [
 			{
 				path: "/",
-				element: <Chat />
+				element: <Home />
 			},
 			{
 				path: "/general",
