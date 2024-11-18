@@ -5,6 +5,7 @@ import { Login } from "../../modules/auth/Login";
 import { Default } from "../layouts/Default";
 import { Chat } from "../../modules/chat/Chat";
 import { Home } from "@/modules/home/Home";
+import { Search } from "@/modules/search/Search";
 
 export const routers = createBrowserRouter([
 	{
@@ -18,6 +19,10 @@ export const routers = createBrowserRouter([
 			{
 				path: "/",
 				element: <Home />,
+			},
+			{
+				path: "/search",
+				element: <Search />,
 			},
 			{
 				path: "/general",
