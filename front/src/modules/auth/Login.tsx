@@ -1,22 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import { Google } from "./components";
 
-
-export type LoginProps = {
-}
+export type LoginProps = {};
 export const Login: React.FC<LoginProps> = () => {
-
 	const navigate = useNavigate();
 
 	const handleRedirectChatGeneral = () => {
-		navigate('/general');
-	}
+		navigate("/general");
+	};
 
-	return <>
-		<div className="w-full h-full max-w-[430px] mx-auto shadow-md border border-gray-700 overflow-hidden center flex-col gap-y-4">
-			<h1>Login</h1>
-			<Google />
-			<button onClick={handleRedirectChatGeneral}>Chat General</button>
-		</div>
-	</>
+	return (
+		<>
+			<div className="w-full h-full max-w-[430px] mx-auto shadow-md border border-gray-700 overflow-hidden center flex-col gap-y-4">
+				<h1>Login</h1>
+				<Google />
+				<button onClick={handleRedirectChatGeneral}>Chat General</button>
+			</div>
+		</>
+	);
 };
