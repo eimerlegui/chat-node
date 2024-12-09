@@ -3,7 +3,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Login } from "../../modules/auth/Login";
 import { Default } from "../layouts/Default";
-import { Chat } from "../../modules/chat/Chat";
+import { ChatGlobal } from "../../modules/chat/Chat";
 import { Home } from "@/modules/home/Home";
 import { Search } from "@/modules/search/Search";
 
@@ -26,7 +26,7 @@ export const routers = createBrowserRouter([
 			},
 			{
 				path: "/general",
-				element: <Chat />,
+				element: <ChatGlobal />,
 			},
 		],
 	},

@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import { ENV } from "../../config/dotenv";
+import { Chat, IMessage, ITyping } from "@/components/chat";
 
 const socket = io(ENV.URL_BACK);
 
 export type ChatProps = {};
-export const Chat: React.FC<ChatProps> = () => {
-	const [typing, setTyping] = useState<{ id: string; typing: boolean }>();
+export const ChatGlobal: React.FC<ChatProps> = () => {
+	const [typing, setTyping] = useState<ITyping>();
 	const [message, setMessage] = useState<string>("");
-	const [messages, setMessages] = useState<{ id: string; data: string }[]>([]);
+	const [messages, setMessages] = useState<IMessage[]>([]);
 
 	let timer: any = null;
 
@@ -43,29 +44,6 @@ export const Chat: React.FC<ChatProps> = () => {
 	};
 
 	return (
-		<>
-			<div className="vstack h-full">
-				<div className="flex items-center w-full h-16 shadow-lg px-10 sticky top-0 flex-shrink-0 bg-[#242424]">
-					<p className="me-1">Person</p>
-					{typing?.typing && <p> está escribiendo</p>}
-				</div>
-
-				<div className="vstack flex-col-reverse">
-					{messages.map((msg, i) => (
-						<p className="border mt-3" style={{ borderColor: msg.id === "null" ? "blue" : "red" }} key={i}>
-							{" "}
-							- {msg.data}
-						</p>
-					))}
-				</div>
-
-				<form className="sticky bottom-0 mt-auto" onSubmit={handleOnSubmit}>
-					<div className="flex">
-						<input className="rounded-full w-full" type="text" value={message} onChange={(e) => setMessage(e.target.value)} onInput={sendTyping} />
-						<button>Send</button>
-					</div>
-				</form>
-			</div>
-		</>
+		<Chat typing={typing} messages={messages} message={message} handleOnSubmit={handleOnSubmit} setMessage={setMessage} sendTyping={sendTyping} />
 	);
 };
